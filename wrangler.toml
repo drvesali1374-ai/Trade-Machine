@@ -1,0 +1,20 @@
+# ============================================================================
+# TradeBot — Cloudflare Pages Configuration (@cloudflare/next-on-pages)
+# ============================================================================
+# Using nodejs_compat_v2 for better Node.js API support (async_hooks etc.)
+# ============================================================================
+
+name = "tradebot"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat_v2"]
+pages_build_output_dir = ".vercel/output/static"
+
+# ─── KV Namespace (permanent database storage) ──────────────────────────────
+[[kv_namespaces]]
+binding = "TRADING_DATA"
+id = "924db71f887b4889b6923521e7fe9754"
+
+# ─── Non-secret environment variables ───────────────────────────────────────
+[vars]
+NODE_ENV = "production"
+TOOBIT_BASE = "https://api.toobit.com"
